@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      addLogos(10);
+      addLogos(5);
     }, 2000); // every 2 seconds
 
     addLogos(10)
@@ -47,7 +47,7 @@ function App() {
       return {
         id: `${Date.now()}-${i}`,
         size,
-        left,
+        left, 
         delay,
         duration,
         opacity,
@@ -68,7 +68,7 @@ function App() {
             src="/flexx-logo.svg"
             className={`falling-logo rotate-${logo.direction}`}
             style={{
-              top: 0,
+              top: -100,
               left: `${logo.left}%`,
               animationDelay: `${logo.delay}s`,
               animationDuration: `${logo.duration}s`,

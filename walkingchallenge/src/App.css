@@ -42,7 +42,7 @@
 
 .app-container {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #7e7e7e;
+  background-color: transparent;
   min-height: 100vh;
 }
 
@@ -119,7 +119,7 @@
   }
 
   100% {
-    transform: translateY(2000px) rotate(360deg);
+    transform: translateY(3000px) rotate(360deg);
   }
 }
 
@@ -129,7 +129,7 @@
   }
 
   100% {
-    transform: translateY(2000px) rotate(-360deg);
+    transform: translateY(3000px) rotate(-360deg);
   }
 }
 
