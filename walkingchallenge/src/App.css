@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -39,4 +38,88 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.app-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #7e7e7e;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  background-color: #004baf;
+  color: white;
+  padding: 20px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gain-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.app-header,
+.leaderboard-container {
+  position: relative;
+  z-index: 1;
+}
+
+.falling-logo {
+  position: absolute;
+  top: -100px;
+  animation: fall 15s linear infinite;
+}
+
+@keyframes fall-spin-right {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+@keyframes fall-spin-left {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(-360deg);
+  }
+}
+
+.rotate-right {
+  animation: fall-spin-right 15s linear infinite;
+}
+
+.rotate-left {
+  animation: fall-spin-left 15s linear infinite;
 }

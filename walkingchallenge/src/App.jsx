@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Leaderboard from './components/Leaderboard';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <div className="logo-rain">
+        {[...Array(20)].map((_, i) => {
+          const size = Math.random() * 30 + 20;
+          const left = Math.random() * 100;
+          const delay = Math.random() * 10;
+          const opacity = Math.random() * 0.5 + 0.8;
+          const rotationDirection = Math.random() < 0.5 ? -1 : 1; // randomly clockwise or counter-clockwise
+          const initialRotation = Math.random() * 360;
+
+          return (
+            <img
+              key={i}
+              src="/flexx-logo.svg"
+              className={`falling-logo rotate-${rotationDirection === 1 ? 'right' : 'left'}`}
+              style={{
+                left: `${left}%`,
+                animationDelay: `${delay}s`,
+                width: `${size}px`,
+                opacity,
+                transform: `rotate(${initialRotation}deg)`,
+              }}
+            />
+          );
+        })}
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+
+      <header className="app-header">
+        <h1>Flexx Walking Challenge</h1>
+      </header>
+
+      <Leaderboard />
+    </div>
+  );
 }
 
-export default App
+export default App;
